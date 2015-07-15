@@ -23,8 +23,6 @@ class Gameplay: CCNode {
     weak var startPoint: CCNode!
     weak var contentLevel: CCNode!
     
-//    weak var selector: CCNode!
-    
     var hero: Character!
     
     var direction: UISwipeGestureRecognizerDirection?
@@ -33,11 +31,12 @@ class Gameplay: CCNode {
     var screenHalf = CCDirector.sharedDirector().viewSize().width / 2
     
     var touching: Bool = false
-    
-    var multitouchEnable = true
+
     
     var heroPosition: CGPoint!
     var heroVelocity: CGPoint!
+    
+    var disableMovement: Bool = false
     
     func didLoadFromCCB(){
         
@@ -50,7 +49,7 @@ class Gameplay: CCNode {
         hero.position = startPoint.position
         
         gamePhysicsNode.addChild(hero)
-
+    
     }
     
     override func update(delta: CCTime) {
@@ -66,53 +65,27 @@ class Gameplay: CCNode {
         println("began")
 
         if xTouch > screenHalf {
-            
-//            var heroPosition = hero.position
-//            var heroVelocity = hero.physicsBody.velocity
-//            
-//            gamePhysicsNode.removeChild(hero)
-//            hero = loadNextHero()
-//            hero.position = heroPosition
-//            hero.physicsBody.velocity = heroVelocity
-//            gamePhysicsNode.addChild(hero)
-//            println("incorrect")
             touching = true
             heroPower()
         }
         
-        // important
-        
-        
-//        else {
-//            var heroPosition = hero.position
-//            var heroVelocity = hero.physicsBody.velocity
-//            gamePhysicsNode.removeChild(hero)
-//            hero = loadNextHero()
-//            hero.position = heroPosition
-//            hero.physicsBody.velocity = heroVelocity
-//            gamePhysicsNode.addChild(hero)
-//            println("incorrect")
-//            
-//        }
-        
-
     }
     
     override func touchMoved(touch: CCTouch!, withEvent event: CCTouchEvent!) {
 
         var currentPosition = touch.locationInWorld().x
         
-        
-        if currentPosition < screenHalf {
-            var currentVelocityY = hero.physicsBody.velocity.y
-            if currentPosition > xTouch {
-                println("right")
-                hero.physicsBody.velocity = CGPoint(x: CGFloat(hero.speed), y: CGFloat(currentVelocityY))
-            } else if currentPosition < xTouch {
-                println("left")
-                hero.physicsBody.velocity = CGPoint(x: CGFloat(-hero.speed), y: CGFloat(currentVelocityY))
-            }
-            
+        if !disableMovement {
+//            if currentPosition < screenHalf {
+                var currentVelocityY = hero.physicsBody.velocity.y
+                if currentPosition > xTouch {
+                    println("right")
+                    hero.physicsBody.velocity = CGPoint(x: CGFloat(hero.speed), y: CGFloat(currentVelocityY))
+                } else if currentPosition < xTouch {
+                    println("left")
+                    hero.physicsBody.velocity = CGPoint(x: CGFloat(-hero.speed), y: CGFloat(currentVelocityY))
+                }
+//            }
         }
     }
     
@@ -121,20 +94,6 @@ class Gameplay: CCNode {
         touching = false
         hero.physicsBody.velocity = CGPoint(x: CGFloat(0), y: CGFloat(0))
     }
-    
-//    func loadNextHero() -> Character? {
-//        if heroType == .Circle {
-//            heroType = .Triangle
-//            return CCBReader.load("Triangle") as! Character
-//        } else if heroType == .Triangle {
-//            heroType = .Rectangle
-//            return CCBReader.load("Rectangle") as! Character
-//        } else if heroType == .Rectangle {
-//            heroType = .Circle
-//            return CCBReader.load("Circle") as! Character
-//        }
-//        return nil
-//    }
     
     func heroPower(){
         if heroType == .Circle  {
@@ -149,6 +108,7 @@ class Gameplay: CCNode {
         }
         if heroType == .Triangle {
             hero.physicsBody.velocity.y = CGFloat(100)
+            disableMovement = true
         }
         if heroType == .Rectangle {
             hero.physicsBody.affectedByGravity = false
