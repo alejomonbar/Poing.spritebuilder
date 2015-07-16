@@ -63,10 +63,12 @@
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		A9886B0A1B49B2790061517C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9886B091B49B2790061517C /* Gameplay.swift */; };
+		A989BB711B56FF660023F422 /* Leftbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A989BB701B56FF660023F422 /* Leftbar.swift */; };
 		A9951A091B4F159A00A74C8F /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9951A081B4F159A00A74C8F /* Circle.swift */; };
 		A9C8D7621B505C87006AE6FA /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7611B505C87006AE6FA /* Triangle.swift */; };
 		A9C8D7721B508B95006AE6FA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7711B508B95006AE6FA /* Character.swift */; };
 		A9C8D7741B508C09006AE6FA /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7731B508C09006AE6FA /* Rectangle.swift */; };
+		A9E10D0E1B5812A100CC1870 /* Chargenext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E10D0D1B5812A100CC1870 /* Chargenext.swift */; };
 		B71F5911188484E7003F4D28 /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5908188484E7003F4D28 /* iPad-old@2x.png */; };
 		B71F5913188484E7003F4D28 /* iPad.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5909188484E7003F4D28 /* iPad.png */; };
@@ -179,10 +181,12 @@
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Poing Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poing Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9886B091B49B2790061517C /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
+		A989BB701B56FF660023F422 /* Leftbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leftbar.swift; sourceTree = "<group>"; };
 		A9951A081B4F159A00A74C8F /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
 		A9C8D7611B505C87006AE6FA /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		A9C8D7711B508B95006AE6FA /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A9C8D7731B508C09006AE6FA /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
+		A9E10D0D1B5812A100CC1870 /* Chargenext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Chargenext.swift; sourceTree = "<group>"; };
 		B71F5907188484E7003F4D28 /* iPad-old.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old.png"; path = "Icons/iPad-old.png"; sourceTree = "<group>"; };
 		B71F5908188484E7003F4D28 /* iPad-old@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "iPad-old@2x.png"; path = "Icons/iPad-old@2x.png"; sourceTree = "<group>"; };
 		B71F5909188484E7003F4D28 /* iPad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iPad.png; path = Icons/iPad.png; sourceTree = "<group>"; };
@@ -451,6 +455,8 @@
 				A9C8D7711B508B95006AE6FA /* Character.swift */,
 				A9C8D7611B505C87006AE6FA /* Triangle.swift */,
 				A9C8D7731B508C09006AE6FA /* Rectangle.swift */,
+				A9E10D0D1B5812A100CC1870 /* Chargenext.swift */,
+				A989BB701B56FF660023F422 /* Leftbar.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -827,6 +833,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9E10D0E1B5812A100CC1870 /* Chargenext.swift in Sources */,
 				A9951A091B4F159A00A74C8F /* Circle.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				A9C8D7721B508B95006AE6FA /* Character.swift in Sources */,
@@ -834,6 +841,7 @@
 				A9C8D7621B505C87006AE6FA /* Triangle.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				A989BB711B56FF660023F422 /* Leftbar.swift in Sources */,
 				A9C8D7741B508C09006AE6FA /* Rectangle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
