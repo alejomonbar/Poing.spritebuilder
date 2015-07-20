@@ -24,11 +24,10 @@ class Gameplay: CCNode {
     weak var contentLevel: CCNode!
     
     weak var gamePlay: CCNode!
+    weak var menuScene: CCNode?
     
     var hero: Character!
-    
-    var direction: UISwipeGestureRecognizerDirection?
-    
+
     var xTouch: CGFloat?
     var yTouch: CGFloat?
     
@@ -43,26 +42,41 @@ class Gameplay: CCNode {
     
     var barExist: Bool = false
     
-    var currentPosition: CGFloat?
+    var currentPositionX: CGFloat?
+    var currentPositionY: CGFloat?
     
     var currentVelocityY:CGFloat?
+    
+    // Change the hero
+    var chargeNext: Chargenext?
+    var menuRightExist: Bool = false
+    
+    var apearWithAmount: CGFloat = 10
+    var changeWithAmount: CGFloat = 30
+    var differenceY: CGFloat!
+    
+    weak var powerScreen: CCSprite!
+    
+    var power: Float = 10 {
+        didSet {
+            powerScreen.scaleX = power / Float(10)
+        }
+    }
+    
+    
     
     func didLoadFromCCB(){
         
         gamePhysicsNode.collisionDelegate = self
-        self.userInteractionEnabled = true
-        gamePhysicsNode.debugDraw = true
-        
-        heroType = HeroType.Circle
-        hero = CCBReader.load("Circle") as? Circle
-        hero.position = startPoint.position
-        
-        gamePhysicsNode.addChild(hero)
+        userInteractionEnabled = true
+        multipleTouchEnabled = true
+//        gamePhysicsNode.debugDraw = true
+        loadLevel()
     
     }
     
     override func update(delta: CCTime) {
-    
+
         if touching{
             heroPower()
         }
@@ -89,41 +103,95 @@ class Gameplay: CCNode {
     
     override func touchMoved(touch: CCTouch!, withEvent event: CCTouchEvent!) {
 
-        currentPosition = touch.locationInWorld().x
+        currentPositionX = touch.locationInWorld().x
+        currentPositionY = touch.locationInWorld().y
         
         if xTouch < screenHalf {
             
-            var difference = currentPosition! - xTouch!
+            var differenceX = currentPositionX! - xTouch!
             
-            if currentPosition < screenHalf {
+            if currentPositionX < screenHalf {
                 currentVelocityY = hero.physicsBody.velocity.y
                 
                 // change the position of the bar
-                if abs(difference) < hero.maxSpeed {
-                    leftBar?.cube.position = CGPoint(x: difference, y: 0)
-                    moveCharacter(difference)
+                if abs(differenceX) < hero.maxSpeed {
+                    leftBar?.cube.position = CGPoint(x: differenceX, y: 0)
+                    moveCharacter(differenceX)
                 } else {
-                    var sign = difference / abs(difference)
+                    var sign = differenceX / abs(differenceX)
                     moveCharacter(sign * hero.maxSpeed)
                     leftBar?.cube.position = CGPoint(x: sign * hero.maxSpeed, y: 0)
                 }
             }
         }
+        else {
+                differenceY = currentPositionY! - yTouch!
+            println(differenceY)
+            println(-changeWithAmount)
+                if abs(differenceY!) > apearWithAmount {
+                    paused = true
+                    if !menuRightExist{
+                        chargeNext = CCBReader.load("Chargenext") as? Chargenext
+                        chargeNext?.position = CGPoint(x: xTouch!, y: yTouch!)
+                        if heroType == .Triangle{
+                            chargeNext!.circleT.visible = true
+                            chargeNext!.triangle.visible = false
+                        } else if heroType == .Rectangle {
+                            chargeNext!.circleR.visible = true
+                            chargeNext!.rectangle.visible = false
+                        }
+                        gamePhysicsNode.addChild(chargeNext)
+                        menuRightExist = true
+                    }
+                }
+            }
     }
     
     override func touchEnded(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         
         touching = false
+        
         hero.physicsBody.affectedByGravity = true
         hero.physicsBody.velocity = CGPoint(x: CGFloat(0), y: CGFloat(0))
+        
         if barExist {
             gamePhysicsNode.removeChild(leftBar)
             barExist = false
         }
+        
+        if menuRightExist {
+            paused = false
+            if differenceY > changeWithAmount {
+                if heroType == .Circle{
+                    heroType = .Triangle
+                } else if heroType == .Rectangle {
+                    heroType = .Triangle
+                } else {
+                    heroType = .Circle
+                }
+             loadNextHero()
+            } else if differenceY < -changeWithAmount {
+                if heroType == .Circle {
+                    heroType = .Rectangle
+                } else if heroType == .Triangle {
+                    heroType = .Rectangle
+                } else {
+                    heroType = .Circle
+                }
+                loadNextHero()
+            }
+            gamePhysicsNode.removeChild(chargeNext)
+            menuRightExist = false
+        }
     }
     
     func heroPower(){
+        
+        
         if heroType == .Circle  {
+            
+            power -= Float(0.01)
+            
             hero.physicsBody.eachCollisionPair { (pair) -> Void in
                 if !self.hero.jumped {
                     self.hero.physicsBody.applyImpulse(CGPoint(x: 0, y: 200))
@@ -134,10 +202,15 @@ class Gameplay: CCNode {
             }
         }
         if heroType == .Triangle {
+            
+            power -= Float(0.02)
             hero.physicsBody.velocity.y = CGFloat(100)
         }
         if heroType == .Rectangle {
+            power -= Float(0.01)
+            
             hero.physicsBody.affectedByGravity = false
+            println(hero.physicsBody.affectedByGravity)
         }
         
     }
@@ -169,28 +242,61 @@ class Gameplay: CCNode {
         heroVelocity = hero.physicsBody.velocity
         gamePhysicsNode.removeChild(hero)
         
+        let follow = CCActionFollow(target: hero, worldBoundary: gamePhysicsNode.boundingBox())
+        gamePhysicsNode.position = follow.currentOffset()
+        gamePhysicsNode.runAction(follow)
+        
         if heroType == .Circle{
             hero = CCBReader.load("Circle") as! Character
         } else if heroType == .Triangle {
             hero = CCBReader.load("Triangle") as! Character
         } else {
+            heroVelocity = CGPoint(x: 0, y: 0)
             hero = CCBReader.load("Rectangle") as! Character
         }
         
         hero.position = heroPosition
+        println(heroVelocity)
         hero.physicsBody.velocity = heroVelocity
         gamePhysicsNode.addChild(hero)
     }
     
     func moveCharacter(velocity: CGFloat){
         
-        if currentPosition! > xTouch! {
+        if currentPositionX! > xTouch! {
             println("right")
             hero.physicsBody.velocity = CGPoint(x: CGFloat(velocity), y: CGFloat(currentVelocityY!))
-        } else if currentPosition! < xTouch {
+        } else if currentPositionX! < xTouch {
             println("left")
             hero.physicsBody.velocity = CGPoint(x: CGFloat(velocity), y: CGFloat(currentVelocityY!))
         }
+    }
+    
+    func loadLevel(){
+        
+        heroType = .Circle
+        hero = CCBReader.load("Circle") as? Circle
+        hero.position = startPoint.position
+        
+        gamePhysicsNode.addChild(hero)
+        
+
+    }
+    
+    func menu(){
+        
+        paused = true
+        
+        menuScene = CCBReader.load("Menuscene", owner: self) as CCNode!
+
+        menuScene!.positionType = CCPositionType(xUnit: .Normalized, yUnit: .Normalized, corner: .BottomLeft)
+        menuScene!.position = CGPoint(x: 0.5, y: 0.5)
+        addChild(menuScene)
+ 
+    }
+    
+    func restart(){
+        paused = false
     }
     
     

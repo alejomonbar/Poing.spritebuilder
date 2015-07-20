@@ -14,3 +14,7 @@
 #import "libs/cocos2d-iphone/external/ObjectAL/ObjectAL/ObjectAL/AudioTrack/OALAudioTrack.h"
 #import "libs/cocos2d-iphone/external/ObjectAL/ObjectAL/ObjectAL/AudioTrack/OALAudioTracks.h"
 #import "libs/cocos2d-iphone/external/ObjectAL/ObjectAL/ObjectAL/Session/OALAudioSession.h"
+
+#import "CCActionFollow+CurrentOffset.h"
+#define CP_ALLOW_PRIVATE_ACCESS 1
+#import "CCPhysics+ObjectiveChipmunk.h"

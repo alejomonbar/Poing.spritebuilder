@@ -65,6 +65,7 @@
 		A9886B0A1B49B2790061517C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9886B091B49B2790061517C /* Gameplay.swift */; };
 		A989BB711B56FF660023F422 /* Leftbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A989BB701B56FF660023F422 /* Leftbar.swift */; };
 		A9951A091B4F159A00A74C8F /* Circle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9951A081B4F159A00A74C8F /* Circle.swift */; };
+		A9B20D201B599668003428CB /* CCActionFollow+CurrentOffset.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B20D1F1B599668003428CB /* CCActionFollow+CurrentOffset.m */; };
 		A9C8D7621B505C87006AE6FA /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7611B505C87006AE6FA /* Triangle.swift */; };
 		A9C8D7721B508B95006AE6FA /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7711B508B95006AE6FA /* Character.swift */; };
 		A9C8D7741B508C09006AE6FA /* Rectangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9C8D7731B508C09006AE6FA /* Rectangle.swift */; };
@@ -183,6 +184,8 @@
 		A9886B091B49B2790061517C /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		A989BB701B56FF660023F422 /* Leftbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leftbar.swift; sourceTree = "<group>"; };
 		A9951A081B4F159A00A74C8F /* Circle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Circle.swift; sourceTree = "<group>"; };
+		A9B20D1C1B59962B003428CB /* CCActionFollow+CurrentOffset.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CCActionFollow+CurrentOffset.h"; sourceTree = "<group>"; };
+		A9B20D1F1B599668003428CB /* CCActionFollow+CurrentOffset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CCActionFollow+CurrentOffset.m"; sourceTree = "<group>"; };
 		A9C8D7611B505C87006AE6FA /* Triangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		A9C8D7711B508B95006AE6FA /* Character.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		A9C8D7731B508C09006AE6FA /* Rectangle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rectangle.swift; sourceTree = "<group>"; };
@@ -549,6 +552,8 @@
 		B77F1CCF17B978D8009739AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				A9B20D1C1B59962B003428CB /* CCActionFollow+CurrentOffset.h */,
+				A9B20D1F1B599668003428CB /* CCActionFollow+CurrentOffset.m */,
 				7A40365D19DDF896007B6E8F /* Platforms */,
 				7AFCD5DD19E9BDC200BCCCDA /* Bridging-Header.h */,
 				7AFCD5DB19E9BD9F00BCCCDA /* cocos2d.h */,
@@ -841,6 +846,7 @@
 				A9C8D7621B505C87006AE6FA /* Triangle.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				A9B20D201B599668003428CB /* CCActionFollow+CurrentOffset.m in Sources */,
 				A989BB711B56FF660023F422 /* Leftbar.swift in Sources */,
 				A9C8D7741B508C09006AE6FA /* Rectangle.swift in Sources */,
 			);
