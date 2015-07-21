@@ -209,7 +209,7 @@
 						<key>value</key>
 						<array>
 							<string>restart</string>
-							<integer>1</integer>
+							<integer>2</integer>
 						</array>
 					</dict>
 					<dict>
@@ -463,6 +463,8 @@
 						</array>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>
@@ -535,8 +537,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

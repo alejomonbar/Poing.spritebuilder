@@ -20,7 +20,6 @@ class Gameplay: CCNode {
     
     weak var gamePhysicsNode: CCPhysicsNode!
     weak var levelNode: CCNode!
-    weak var startPoint: CCNode!
     weak var contentLevel: CCNode!
     
     weak var gamePlay: CCNode!
@@ -57,6 +56,7 @@ class Gameplay: CCNode {
     
     weak var powerScreen: CCSprite!
     
+    
     var power: Float = 10 {
         didSet {
             powerScreen.scaleX = power / Float(10)
@@ -64,6 +64,7 @@ class Gameplay: CCNode {
     }
     
     
+    var follow: CCActionFollow?
     
     func didLoadFromCCB(){
         
@@ -95,7 +96,7 @@ class Gameplay: CCNode {
             // Charge the bar when a touch in the left scree exist
             leftBar = CCBReader.load("Leftbar") as? Leftbar
             leftBar?.position = CGPoint(x: xTouch!, y: yTouch!)
-            gamePhysicsNode.addChild(leftBar)
+            gamePlay.addChild(leftBar)
             barExist = true
         }
         
@@ -140,7 +141,7 @@ class Gameplay: CCNode {
                             chargeNext!.circleR.visible = true
                             chargeNext!.rectangle.visible = false
                         }
-                        gamePhysicsNode.addChild(chargeNext)
+                        gamePlay.addChild(chargeNext)
                         menuRightExist = true
                     }
                 }
@@ -155,7 +156,7 @@ class Gameplay: CCNode {
         hero.physicsBody.velocity = CGPoint(x: CGFloat(0), y: CGFloat(0))
         
         if barExist {
-            gamePhysicsNode.removeChild(leftBar)
+            gamePlay.removeChild(leftBar)
             barExist = false
         }
         
@@ -180,7 +181,7 @@ class Gameplay: CCNode {
                 }
                 loadNextHero()
             }
-            gamePhysicsNode.removeChild(chargeNext)
+            gamePlay.removeChild(chargeNext)
             menuRightExist = false
         }
     }
@@ -242,23 +243,21 @@ class Gameplay: CCNode {
         heroVelocity = hero.physicsBody.velocity
         gamePhysicsNode.removeChild(hero)
         
-        let follow = CCActionFollow(target: hero, worldBoundary: gamePhysicsNode.boundingBox())
-        gamePhysicsNode.position = follow.currentOffset()
-        gamePhysicsNode.runAction(follow)
-        
         if heroType == .Circle{
             hero = CCBReader.load("Circle") as! Character
         } else if heroType == .Triangle {
             hero = CCBReader.load("Triangle") as! Character
         } else {
-            heroVelocity = CGPoint(x: 0, y: 0)
+//            heroVelocity = CGPoint(x: 0, y: 0)
             hero = CCBReader.load("Rectangle") as! Character
         }
         
         hero.position = heroPosition
-        println(heroVelocity)
         hero.physicsBody.velocity = heroVelocity
+        followHero()
         gamePhysicsNode.addChild(hero)
+        
+        
     }
     
     func moveCharacter(velocity: CGFloat){
@@ -274,13 +273,16 @@ class Gameplay: CCNode {
     
     func loadLevel(){
         
+        let level = CCBReader.load("Levels/Level2") as! Level
+        gamePhysicsNode.addChild(level)
+        
         heroType = .Circle
         hero = CCBReader.load("Circle") as? Circle
-        hero.position = startPoint.position
+        hero.position = level.startPoint.position
         
         gamePhysicsNode.addChild(hero)
         
-
+        followHero()
     }
     
     func menu(){
@@ -296,7 +298,15 @@ class Gameplay: CCNode {
     }
     
     func restart(){
-        paused = false
+        let restartScene = CCBReader.loadAsScene("Gameplay")
+        let transition = CCTransition(fadeWithDuration: 0.8)
+        CCDirector.sharedDirector().presentScene(restartScene, withTransition: transition)
+    }
+    
+    func followHero(){
+        follow = CCActionFollow(target: hero, worldBoundary: gamePhysicsNode.boundingBox())
+        gamePhysicsNode.position = follow!.currentOffset()
+        gamePhysicsNode.runAction(follow)
     }
     
     
