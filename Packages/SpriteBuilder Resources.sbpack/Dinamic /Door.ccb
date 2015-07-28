@@ -40,7 +40,7 @@
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string>Triangle</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
@@ -52,7 +52,7 @@
 			<key>affectedByGravity</key>
 			<true/>
 			<key>allowsRotation</key>
-			<false/>
+			<true/>
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
@@ -60,13 +60,13 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string>hero</string>
+			<string>door</string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -74,32 +74,40 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>69.60546875</real>
+					<real>0.17969512939453125</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>39</real>
+					<real>69.69140625</real>
+					<real>176.09378051757812</real>
 				</array>
 				<array>
-					<real>39</real>
-					<real>0.0</real>
+					<real>91.2265625</real>
+					<real>176.74612426757812</real>
+				</array>
+				<array>
+					<real>88.32421875</real>
+					<real>0.01172637939453125</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>39</real>
-						<real>0.0</real>
+						<real>88.32421875</real>
+						<real>0.01172637939453125</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>39</real>
+						<real>91.2265625</real>
+						<real>176.74612426757812</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>0.0</real>
+						<real>69.69140625</real>
+						<real>176.09378051757812</real>
+					</array>
+					<array>
+						<real>69.60546875</real>
+						<real>0.17969512939453125</real>
 					</array>
 				</array>
 			</array>
@@ -135,8 +143,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>0.5</real>
+					<real>0.5</real>
 				</array>
 			</dict>
 			<dict>
@@ -160,7 +168,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Assest/IT-5@4x.png</string>
+					<string>Assest/roofs-walls-02@4x.png</string>
 				</array>
 			</dict>
 			<dict>

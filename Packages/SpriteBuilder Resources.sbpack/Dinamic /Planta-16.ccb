@@ -40,7 +40,7 @@
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string>Triangle</string>
+		<string></string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
@@ -52,7 +52,7 @@
 			<key>affectedByGravity</key>
 			<true/>
 			<key>allowsRotation</key>
-			<false/>
+			<true/>
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
@@ -60,13 +60,13 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string>hero</string>
+			<string></string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<true/>
+			<false/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -74,32 +74,152 @@
 			<key>points</key>
 			<array>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>33.76171875</real>
+					<real>105.05470275878906</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>39</real>
+					<real>34.84375</real>
+					<real>119.90626525878906</real>
 				</array>
 				<array>
-					<real>39</real>
-					<real>0.0</real>
+					<real>40.359375</real>
+					<real>134.97268676757812</real>
+				</array>
+				<array>
+					<real>61.7734375</real>
+					<real>148.47659301757812</real>
+				</array>
+				<array>
+					<real>84.78515625</real>
+					<real>153.29690551757812</real>
+				</array>
+				<array>
+					<real>111.83984375</real>
+					<real>147.26565551757812</real>
+				</array>
+				<array>
+					<real>135.8515625</real>
+					<real>120.94923400878906</real>
+				</array>
+				<array>
+					<real>130.29296875</real>
+					<real>102.96876525878906</real>
+				</array>
+				<array>
+					<real>114.06640625</real>
+					<real>93.875015258789062</real>
+				</array>
+				<array>
+					<real>117.45703125</real>
+					<real>122.88673400878906</real>
+				</array>
+				<array>
+					<real>106.296875</real>
+					<real>141.60159301757812</real>
+				</array>
+				<array>
+					<real>86.1484375</real>
+					<real>145.85546875</real>
+				</array>
+				<array>
+					<real>54.92578125</real>
+					<real>130.22268676757812</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>39</real>
-						<real>0.0</real>
+						<real>40.359375</real>
+						<real>134.97268676757812</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>39</real>
+						<real>34.84375</real>
+						<real>119.90626525878906</real>
 					</array>
 					<array>
-						<real>0.0</real>
-						<real>0.0</real>
+						<real>33.76171875</real>
+						<real>105.05470275878906</real>
+					</array>
+					<array>
+						<real>54.92578125</real>
+						<real>130.22268676757812</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>84.78515625</real>
+						<real>153.29690551757812</real>
+					</array>
+					<array>
+						<real>61.7734375</real>
+						<real>148.47659301757812</real>
+					</array>
+					<array>
+						<real>40.359375</real>
+						<real>134.97268676757812</real>
+					</array>
+					<array>
+						<real>54.92578125</real>
+						<real>130.22268676757812</real>
+					</array>
+					<array>
+						<real>86.1484375</real>
+						<real>145.85546875</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>111.83984375</real>
+						<real>147.26565551757812</real>
+					</array>
+					<array>
+						<real>84.78515625</real>
+						<real>153.29690551757812</real>
+					</array>
+					<array>
+						<real>86.1484375</real>
+						<real>145.85546875</real>
+					</array>
+					<array>
+						<real>106.296875</real>
+						<real>141.60159301757812</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>135.8515625</real>
+						<real>120.94923400878906</real>
+					</array>
+					<array>
+						<real>111.83984375</real>
+						<real>147.26565551757812</real>
+					</array>
+					<array>
+						<real>106.296875</real>
+						<real>141.60159301757812</real>
+					</array>
+					<array>
+						<real>117.45703125</real>
+						<real>122.88673400878906</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>117.45703125</real>
+						<real>122.88673400878906</real>
+					</array>
+					<array>
+						<real>114.06640625</real>
+						<real>93.875015258789062</real>
+					</array>
+					<array>
+						<real>130.29296875</real>
+						<real>102.96876525878906</real>
+					</array>
+					<array>
+						<real>135.8515625</real>
+						<real>120.94923400878906</real>
 					</array>
 				</array>
 			</array>
@@ -135,8 +255,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.0</real>
-					<real>0.0</real>
+					<real>0.5</real>
+					<real>0.5</real>
 				</array>
 			</dict>
 			<dict>
@@ -160,7 +280,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Assest/IT-5@4x.png</string>
+					<string>Hamer Head Desings/Planta-16.png</string>
 				</array>
 			</dict>
 			<dict>

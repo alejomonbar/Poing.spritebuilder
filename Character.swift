@@ -7,8 +7,8 @@
 //
 
 class Character: CCSprite {
+    
     var maxSpeed: CGFloat = 80
     var jumped: Bool = false
-    
     
 }

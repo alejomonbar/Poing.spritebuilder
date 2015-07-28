@@ -10,5 +10,9 @@ import Foundation
 
 class Level: CCNode {
     weak var startPoint: CCNode!
+    weak var mushroom: CCNode!
     
+    var powerT: Float = 0
+    var powerR: Float = 0
+    var powerC: Float = 0
 }
