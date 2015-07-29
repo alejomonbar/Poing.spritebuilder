@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>13</integer>
+	<integer>14</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -62,7 +62,7 @@
 			<key>collisionType</key>
 			<string>hero</string>
 			<key>cornerRadius</key>
-			<real>19.5</real>
+			<real>18.570377349853516</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>

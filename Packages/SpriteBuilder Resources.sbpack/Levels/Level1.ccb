@@ -1179,6 +1179,8 @@
 						<string>Dinamic /Planta-15.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1317,7 +1319,7 @@
 				<key>type</key>
 				<integer>1</integer>
 				<key>value</key>
-				<string>0.050000</string>
+				<string>0.010000</string>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -1345,9 +1347,9 @@
 				<key>optimized</key>
 				<false/>
 				<key>type</key>
-				<integer>2</integer>
+				<integer>0</integer>
 				<key>value</key>
-				<string>1</string>
+				<string>3</string>
 			</dict>
 		</array>
 		<key>displayName</key>
@@ -1418,8 +1420,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>

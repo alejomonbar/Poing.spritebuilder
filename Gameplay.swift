@@ -100,12 +100,16 @@ class Gameplay: CCNode{
     
     var scaleH: Float = 0
     
+    var mushrooms: Int = 0
+    
+    var testing: Int = 0
+    
     func didLoadFromCCB(){
 
         gamePhysicsNode.collisionDelegate = self
         userInteractionEnabled = true
         multipleTouchEnabled = true
-//        gamePhysicsNode.debugDraw = true
+        gamePhysicsNode.debugDraw = true
         
         callT.exclusiveTouch = false
         callR.exclusiveTouch = false
@@ -197,6 +201,7 @@ class Gameplay: CCNode{
     }
     
     func heroPower(){
+        
         println("power")
         if power > 0 {
         if heroType == .Circle  {
@@ -228,23 +233,6 @@ class Gameplay: CCNode{
     
     func resetJump() {
         hero.jumped = false
-    }
-    
-    func callTriangle() {
-        heroType = .Triangle
-        loadNextHero()
-    }
-    
-    func callRectangle(){
-        heroType = .Rectangle
-        loadNextHero()
-    }
-    
-    func callCircle(){
-        heroType = .Circle
-        loadNextHero()
-
-        
     }
     
     func loadNextHero() {
@@ -298,6 +286,8 @@ class Gameplay: CCNode{
         powerT = level.powerT
         powerR = level.powerR
         powerC = level.powerC
+        // Amount of mushrooms in each level
+        mushrooms = level.mushroom
         // Doing the level size equal to gamePhysicsNode size
         gamePhysicsNode.contentSize = level.contentSize
         
@@ -373,15 +363,16 @@ class Gameplay: CCNode{
         gamePhysicsNode.runAction(follow)
     }
 
-    
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, door: CCNode!) -> ObjCBool {
-        paused = true
-        let win = CCBReader.load("Win", owner: self)
-        win!.positionType = CCPositionType(xUnit: .Normalized, yUnit: .Normalized, corner: .BottomLeft)
-        win!.position = CGPoint(x: 0, y: 0)
-        addChild(win)
-        currentLevel++
-        firstTime = true
+        if mushrooms == 0 {
+            paused = true
+            let win = CCBReader.load("Win", owner: self)
+            win!.positionType = CCPositionType(xUnit: .Normalized, yUnit: .Normalized, corner: .BottomLeft)
+            win!.position = CGPoint(x: 0, y: 0)
+            addChild(win)
+            currentLevel++
+            firstTime = true
+        }
         return true
 
     }
@@ -393,7 +384,22 @@ class Gameplay: CCNode{
     }
     
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, mushroom: CCNode!) -> ObjCBool {
-        mushroom.removeFromParent()
+        if mushroom != nil {
+            mushroom.removeFromParent()
+            mushrooms--
+        }
+        return true
+        
+    }
+    
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, plantJump: CCNode!) -> ObjCBool {
+        self.hero.physicsBody.applyImpulse(CGPoint(x: 0, y: 350))
+        return true
+        
+    }
+    
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, mouth: CCNode!) -> ObjCBool {
+        reload()
         return true
         
     }
@@ -434,5 +440,28 @@ class Gameplay: CCNode{
         menuR.title = "menu"
         enableButtons()
         
+    }
+    
+    func callTriangle() {
+        heroType = .Triangle
+        loadNextHero()
+    }
+    
+    func callRectangle(){
+        heroType = .Rectangle
+        loadNextHero()
+    }
+    
+    func callCircle(){
+        heroType = .Circle
+        loadNextHero()
+        
+        
+    }
+    
+    func testing(){
+        let level = CCBReader.loadAsScene("GamePlay")
+        CCDirector.sharedDirector().presentScene(Level)
+        println()
     }
 }
