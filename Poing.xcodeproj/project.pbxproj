@@ -63,6 +63,10 @@
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
 		A9721B651B5D83F60002060B /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9721B641B5D83F60002060B /* Level.swift */; };
+		A97422BC1B6AA3980055EDEF /* MenuFirstTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */; };
+		A97422C01B6AA3FF0055EDEF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422BF1B6AA3FF0055EDEF /* Menu.swift */; };
+		A97422C21B6AA99C0055EDEF /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422C11B6AA99C0055EDEF /* Episodes.swift */; };
+		A97422C41B6AB5750055EDEF /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422C31B6AB5750055EDEF /* Levels.swift */; };
 		A9886B0A1B49B2790061517C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9886B091B49B2790061517C /* Gameplay.swift */; };
 		A989BB711B56FF660023F422 /* Leftbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A989BB701B56FF660023F422 /* Leftbar.swift */; };
 		A9904DDB1B6019290008B904 /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9904DDA1B6019290008B904 /* Win.swift */; };
@@ -184,6 +188,10 @@
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Poing Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poing Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9721B641B5D83F60002060B /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFirstTime.swift; sourceTree = "<group>"; };
+		A97422BF1B6AA3FF0055EDEF /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		A97422C11B6AA99C0055EDEF /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
+		A97422C31B6AB5750055EDEF /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		A9886B091B49B2790061517C /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		A989BB701B56FF660023F422 /* Leftbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leftbar.swift; sourceTree = "<group>"; };
 		A9904DDA1B6019290008B904 /* Win.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
@@ -457,6 +465,7 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */,
 				A9886B091B49B2790061517C /* Gameplay.swift */,
 				A9951A081B4F159A00A74C8F /* Circle.swift */,
 				A9C8D7711B508B95006AE6FA /* Character.swift */,
@@ -466,6 +475,9 @@
 				A9E10D0D1B5812A100CC1870 /* Chargenext.swift */,
 				A9721B641B5D83F60002060B /* Level.swift */,
 				A989BB701B56FF660023F422 /* Leftbar.swift */,
+				A97422BF1B6AA3FF0055EDEF /* Menu.swift */,
+				A97422C11B6AA99C0055EDEF /* Episodes.swift */,
+				A97422C31B6AB5750055EDEF /* Levels.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
 			name = Source;
@@ -849,12 +861,16 @@
 				A9951A091B4F159A00A74C8F /* Circle.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				A9C8D7721B508B95006AE6FA /* Character.swift in Sources */,
+				A97422BC1B6AA3980055EDEF /* MenuFirstTime.swift in Sources */,
+				A97422C21B6AA99C0055EDEF /* Episodes.swift in Sources */,
 				A9904DDB1B6019290008B904 /* Win.swift in Sources */,
 				A9886B0A1B49B2790061517C /* Gameplay.swift in Sources */,
 				A9C8D7621B505C87006AE6FA /* Triangle.swift in Sources */,
 				A9721B651B5D83F60002060B /* Level.swift in Sources */,
+				A97422C01B6AA3FF0055EDEF /* Menu.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
+				A97422C41B6AB5750055EDEF /* Levels.swift in Sources */,
 				A9B20D201B599668003428CB /* CCActionFollow+CurrentOffset.m in Sources */,
 				A989BB711B56FF660023F422 /* Leftbar.swift in Sources */,
 				A9C8D7741B508C09006AE6FA /* Rectangle.swift in Sources */,

@@ -60,7 +60,7 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string>plantJump</string>
+			<string></string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
@@ -70,78 +70,152 @@
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
-			<real>0.30000001192092896</real>
+			<real>0.69999998807907104</real>
 			<key>points</key>
 			<array>
 				<array>
-					<real>49.15625</real>
-					<real>91.871109008789062</real>
+					<real>111.7265625</real>
+					<real>132.80860900878906</real>
 				</array>
 				<array>
-					<real>84.03125</real>
-					<real>116.06251525878906</real>
+					<real>77.765625</real>
+					<real>155.26173400878906</real>
 				</array>
 				<array>
-					<real>115.78125</real>
-					<real>115.45314025878906</real>
+					<real>41.859375</real>
+					<real>157.86329650878906</real>
 				</array>
 				<array>
-					<real>128.24609375</real>
-					<real>123.87501525878906</real>
+					<real>18.54296875</real>
+					<real>176.13673400878906</real>
 				</array>
 				<array>
-					<real>148.82421875</real>
-					<real>119.27345275878906</real>
+					<real>242.87109375</real>
+					<real>169.27345275878906</real>
 				</array>
 				<array>
-					<real>134.8359375</real>
-					<real>56.050796508789062</real>
+					<real>220.84765625</real>
+					<real>158.46095275878906</real>
 				</array>
 				<array>
-					<real>82.6015625</real>
-					<real>74.460952758789062</real>
+					<real>219.72265625</real>
+					<real>151.21095275878906</real>
+				</array>
+				<array>
+					<real>192.5</real>
+					<real>153.21876525878906</real>
+				</array>
+				<array>
+					<real>172.25390625</real>
+					<real>141.71485900878906</real>
+				</array>
+				<array>
+					<real>152.97265625</real>
+					<real>147.18751525878906</real>
+				</array>
+				<array>
+					<real>141.7265625</real>
+					<real>139.62892150878906</real>
+				</array>
+				<array>
+					<real>122.62109375</real>
+					<real>129.98829650878906</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>115.78125</real>
-						<real>115.45314025878906</real>
+						<real>121.60712432861328</real>
+						<real>172.98350524902344</real>
 					</array>
 					<array>
-						<real>84.03125</real>
-						<real>116.06251525878906</real>
+						<real>152.97265625</real>
+						<real>147.18751525878906</real>
 					</array>
 					<array>
-						<real>49.15625</real>
-						<real>91.871109008789062</real>
+						<real>172.25390625</real>
+						<real>141.71485900878906</real>
 					</array>
 					<array>
-						<real>82.6015625</real>
-						<real>74.460952758789062</real>
+						<real>192.5</real>
+						<real>153.21876525878906</real>
 					</array>
 				</array>
 				<array>
 					<array>
-						<real>82.6015625</real>
-						<real>74.460952758789062</real>
+						<real>192.5</real>
+						<real>153.21876525878906</real>
 					</array>
 					<array>
-						<real>134.8359375</real>
-						<real>56.050796508789062</real>
+						<real>219.72265625</real>
+						<real>151.21095275878906</real>
 					</array>
 					<array>
-						<real>148.82421875</real>
-						<real>119.27345275878906</real>
+						<real>220.84765625</real>
+						<real>158.46095275878906</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>220.84765625</real>
+						<real>158.46095275878906</real>
 					</array>
 					<array>
-						<real>128.24609375</real>
-						<real>123.87501525878906</real>
+						<real>242.87109375</real>
+						<real>169.27345275878906</real>
 					</array>
 					<array>
-						<real>115.78125</real>
-						<real>115.45314025878906</real>
+						<real>121.60712432861328</real>
+						<real>172.98350524902344</real>
+					</array>
+					<array>
+						<real>192.5</real>
+						<real>153.21876525878906</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>121.60712432861328</real>
+						<real>172.98350524902344</real>
+					</array>
+					<array>
+						<real>18.54296875</real>
+						<real>176.13673400878906</real>
+					</array>
+					<array>
+						<real>41.859375</real>
+						<real>157.86329650878906</real>
+					</array>
+					<array>
+						<real>77.765625</real>
+						<real>155.26173400878906</real>
+					</array>
+				</array>
+				<array>
+					<array>
+						<real>77.765625</real>
+						<real>155.26173400878906</real>
+					</array>
+					<array>
+						<real>111.7265625</real>
+						<real>132.80860900878906</real>
+					</array>
+					<array>
+						<real>122.62109375</real>
+						<real>129.98829650878906</real>
+					</array>
+					<array>
+						<real>141.7265625</real>
+						<real>139.62892150878906</real>
+					</array>
+					<array>
+						<real>152.97265625</real>
+						<real>147.18751525878906</real>
+					</array>
+					<array>
+						<real>121.60712432861328</real>
+						<real>172.98350524902344</real>
 					</array>
 				</array>
 			</array>
@@ -202,7 +276,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Hamer Head Desings/Planta-14.png</string>
+					<string>Hamer Head Desings/Roca-10.png</string>
 				</array>
 			</dict>
 			<dict>
