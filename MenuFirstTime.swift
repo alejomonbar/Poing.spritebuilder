@@ -11,6 +11,7 @@ import Foundation
 class MenuFirstTime: CCNode {
     
     func start(){
+        Gameplay().defaults.setInteger(1, forKey: "level")
         let level = CCBReader.loadAsScene("Gameplay")
         let transition = CCTransition(fadeWithDuration: 0.8)
         CCDirector.sharedDirector().presentScene(level, withTransition: transition)

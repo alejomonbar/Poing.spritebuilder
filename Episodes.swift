@@ -10,6 +10,30 @@ import Foundation
 
 class Episodes: CCNode {
     
+    weak var two: CCButton!
+    weak var three: CCButton!
+    
+    func didLoadFromCCB(){
+        var bestLevel = Gameplay().defaults.integerForKey("bestLevel")
+        println(bestLevel)
+        println(Gameplay().defaults.boolForKey("episode2"))
+        println(Gameplay().defaults.integerForKey("bestLevel"))
+        // Desactive the button from chose each episode
+        
+        if bestLevel < 18 {
+            three.visible = false
+            if bestLevel < 9 {
+                two.visible = false
+            } else {
+                two.visible = true
+            }
+        } else {
+            three.visible = true
+        }
+
+        
+    }
+    
     func episode1(){
         Gameplay().defaults.setInteger(0, forKey: "currentEpisode")
         let level = CCBReader.loadAsScene("Levels")

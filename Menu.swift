@@ -12,7 +12,7 @@ class Menu: CCNode {
     
     func cont(){
         Gameplay().defaults.setBool(false, forKey: "fromLevels")
-        let level = CCBReader.loadAsScene("GamePlay")
+        let level = CCBReader.loadAsScene("Gameplay")
         let transition = CCTransition(fadeWithDuration: 0.8)
         CCDirector.sharedDirector().presentScene(level, withTransition: transition)
     }

@@ -17,9 +17,9 @@ class Win: CCNode {
     weak var star2: CCNode!
     weak var star3: CCNode!
     // Show the stars if the level of energy is over that value
-    var percentTo3 = Float(30)
-    var percentTo2 = Float(20)
-    var percentTo1 = Float(10)
+    var percentTo3 = Float(20)
+    var percentTo2 = Float(10)
+    var percentTo1 = Float(5)
     
     var currentLevel = Gameplay().defaults.integerForKey("level")
     
