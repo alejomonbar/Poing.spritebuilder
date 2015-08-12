@@ -15,5 +15,8 @@ class Level: CCNode {
     var powerR: Float = 0
     var powerC: Float = 0
     
+    var toGet3: Float = 0
+    var toGet2: Float = 0
+    
     var mushroom: Int = 0
 }

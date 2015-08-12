@@ -115,6 +115,9 @@ class Gameplay: CCNode{
     weak var powerScreenT: CCNode!
     weak var powerScreenC: CCNode!
     
+    weak var menuP: CCNode!
+    weak var menuT: CCNode!
+    
     var powerRectangle: Float = 10 {
         didSet {
             powerScreenR.scaleX = powerRectangle / Float(10)
@@ -149,12 +152,19 @@ class Gameplay: CCNode{
             currentLevel = Gameplay().defaults.integerForKey("levelButton")
         } else {
             currentLevel = defaults.integerForKey("level")
-            println(currentLevel)
+            
         }
+        
         loadLevel()
     }
     
     override func update(delta: CCTime) {
+        println(defaults.boolForKey("tutorial\(currentLevel + 1)"))
+        if defaults.boolForKey("tutorial\(currentLevel + 1)"){
+            animationManager.runAnimationsForSequenceNamed("Tutorial\(currentLevel + 1)")
+            defaults.setBool(false, forKey: "tutorial\(currentLevel + 1)")
+        }
+
 
         if heroP.touchInside{
             heroPower()
@@ -166,6 +176,11 @@ class Gameplay: CCNode{
         }
         
         if CGRectGetMaxY(hero.boundingBox()) < CGRectGetMinY(gamePhysicsNode.boundingBox()) {
+//            if heroType == .Circle {
+//                hero.death()
+//                self.scheduleOnce("restart", delay: 1.0 )
+//                return
+//            }
             restart()
         }
         if barExist && differenceX != nil {
@@ -243,42 +258,72 @@ class Gameplay: CCNode{
     
     func heroPower(){
         println(power)
-        if power > 0 {
         if heroType == .Circle  {
-            hero.physicsBody.eachCollisionPair { (pair) -> Void in
-                if !self.hero.jumped {
-                    self.energyC++
-                    self.hero.physicsBody.applyImpulse(CGPoint(x: 0, y: 180))
-                    self.hero.jumped = true
-                    self.reducePower(self.powerC)
-                    NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: Selector("resetJump"), userInfo: nil, repeats: false)
+            if powerCircle > 0 {
+                hero.physicsBody.eachCollisionPair { (pair) -> Void in
+                    if !self.hero.jumped {
+                        self.energyC++
+                        self.hero.physicsBody.applyImpulse(CGPoint(x: 0, y: 180))
+                        self.hero.jumped = true
+                        self.reducePowerC(self.powerC)
+                        NSTimer.scheduledTimerWithTimeInterval(0.3, target: self, selector: Selector("resetJump"), userInfo: nil, repeats: false)
+                    }
                 }
-
-
             }
         }
-        if heroType == .Triangle {
             
-            reducePower(powerT)
-            hero.physicsBody.velocity.y = CGFloat(100)
-            energyT++
+        if heroType == .Triangle {
+            if powerTriangle > 0 {
+                reducePowerT(powerT)
+                hero.physicsBody.velocity.y = CGFloat(100)
+                energyT++
+            }
         }
         if heroType == .Rectangle {
-            reducePower(powerR)
-            hero.physicsBody.velocity.y = CGFloat(0)
-            hero.physicsBody.affectedByGravity = false
-            println(hero.physicsBody.affectedByGravity)
-            energyR++
+            if powerRectangle > 0 {
+                reducePowerR(powerR)
+                hero.physicsBody.velocity.y = CGFloat(0)
+                hero.physicsBody.affectedByGravity = false
+                println(hero.physicsBody.affectedByGravity)
+                energyR++
+            }
         }
-        }
+        
         
     }
     
-    func reducePower(reducePower: Float ){
+    func reducePower(reducePower: Float){
         if power - reducePower >= 0 {
             power -= reducePower
         }
         else { power = 0}
+    }
+    
+    func reducePowerT(reducePower: Float){
+        if powerTriangle - reducePower >= 0 {
+            powerTriangle -= reducePower
+            power = powerTriangle
+        }
+        else { powerTriangle = 0
+        power = powerTriangle}
+    }
+    func reducePowerR(reducePower: Float){
+        if powerRectangle - reducePower >= 0 {
+            powerRectangle -= reducePower
+            power = powerRectangle
+        }
+        else { powerRectangle = 0
+            power = powerRectangle
+        }
+    }
+    func reducePowerC(reducePower: Float){
+        if powerCircle - reducePower >= 0 {
+            powerCircle -= reducePower
+            power = powerCircle
+        }
+        else { powerCircle = 0
+            power = powerCircle
+        }
     }
     
     func resetJump() {
@@ -293,10 +338,13 @@ class Gameplay: CCNode{
         
         if heroType == .Circle{
             hero = CCBReader.load("Circle") as! Character
+            power = powerCircle
         } else if heroType == .Triangle {
             hero = CCBReader.load("Triangle") as! Character
+            power = powerTriangle
         } else {
             hero = CCBReader.load("Rectangle") as! Character
+            power = powerRectangle
         }
         
         hero.position = heroPosition
@@ -318,8 +366,6 @@ class Gameplay: CCNode{
     
     func loadLevel(){
         
-//        power = 10
-        levelNode.removeAllChildren()
         println(currentLevel)
         let level = CCBReader.load("Levels/Level\(currentLevel)") as! Level
         // Charge the characteristics about how the characters spend the power from the level
@@ -330,7 +376,9 @@ class Gameplay: CCNode{
         mushrooms = level.mushroom
         // Doing the level size equal to gamePhysicsNode size
         gamePhysicsNode.contentSize = level.contentSize
-        
+        defaults.setFloat(level.toGet2, forKey: "toGet2")
+        defaults.setFloat(level.toGet3, forKey: "toGet3")
+
         scaleH = Float(CCDirector.sharedDirector().viewSize().height / level.contentSize.height)
         
         levelNode.addChild(level)
@@ -347,17 +395,22 @@ class Gameplay: CCNode{
         // It looks if a map already have been presented in the screen for first time
         if defaults.boolForKey("presentMap") {
             map()
-            animationManager.runAnimationsForSequenceNamed("TimeF")
+//            animationManager.runAnimationsForSequenceNamed("TimeF")
+            menuP.visible = true
+            menuT.visible = false
         }
     }
     
     func menu(){
         
         paused = true
-        
+        if defaults.boolForKey("tutorial1"){
+            defaults.setBool(false, forKey: "tutorial1")
+        }
         if mapExist {
             if firstTime{
-                animationManager.runAnimationsForSequenceNamed("MenuB")
+                menuP.visible = false
+                menuT.visible = true
                 background.opacity = 1
                 firstTime = false
             }
@@ -384,8 +437,8 @@ class Gameplay: CCNode{
 //        menuScene!.position = CGPoint(x: 0.5, y: 0.5)
         menuPosition.addChild(menuScene)
         background.opacity = 0.5
-        menuR.title = "continue"
-
+        menuT.visible = false
+        menuP.visible = true
  
     }
     
@@ -403,7 +456,7 @@ class Gameplay: CCNode{
     
     // When the level finish because the player completed the level
     func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, door: CCNode!) -> ObjCBool {
-        
+
         if mushrooms == 0 {
             println("energyR")
             println(energyR)
@@ -427,7 +480,7 @@ class Gameplay: CCNode{
 
             }
             defaults.setBool(true, forKey: "presentMap")
-            defaults.setFloat(power, forKey: "level\(currentLevel)")
+            defaults.setFloat(powerRectangle + powerTriangle + powerCircle, forKey: "level\(currentLevel)")
             
             let win = CCBReader.loadAsScene("Win")
             let transition = CCTransition(fadeWithDuration: 0.8)
@@ -452,13 +505,16 @@ class Gameplay: CCNode{
         
     }
     
-    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, mouth: CCNode!) -> ObjCBool {
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, die: CCNode!) -> ObjCBool {
         restart()
         return true
         
     }
     
     func map() {
+        if defaults.boolForKey("tutorial1") {
+            animationManager.runAnimationsForSequenceNamed("Tutorial1")
+        }
         self.selector.visible = false
         background.opacity = 1
         userInteractionEnabled = false
@@ -467,7 +523,8 @@ class Gameplay: CCNode{
         gamePhysicsNode.scale = scaleH
         menuPosition.removeChild(menuScene)
         mapExist = true
-        menuR.title = "continue"
+        menuT.visible = false
+        menuP.visible = true
         unableButtons()
     }
 
@@ -488,7 +545,8 @@ class Gameplay: CCNode{
     func aftermenu() {
         userInteractionEnabled = true
         paused = false
-        menuR.title = "menu"
+        menuT.visible = true
+        menuP.visible = false
         enableButtons()
         
     }
@@ -516,14 +574,7 @@ class Gameplay: CCNode{
         CCDirector.sharedDirector().presentScene(level, withTransition: transition)
     }
     
-    func testing(){
-        resetToDefaults()
-        defaults.setInteger(1, forKey: "bestLevel")
-        defaults.setInteger( 1, forKey: "level")
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "firstTime")
-        presentGamePlay()
-    }
-    
+        
     func mainMenu(){
         let level = CCBReader.loadAsScene("Episodes")
         let transition = CCTransition(fadeWithDuration: 0.8)
@@ -539,5 +590,15 @@ class Gameplay: CCNode{
 //            println(id)
 //
 //        }
+    }
+    
+    func ccPhysicsCollisionBegin(pair: CCPhysicsCollisionPair!, hero: CCNode!, foliage: CCNode!) -> ObjCBool {
+        hero.physicsBody.velocity = CGPoint(x: 0 , y: 0)
+        hero.physicsBody.applyImpulse(CGPoint(x: 0,y: 200)) 
+        if foliage != nil {
+            foliage.removeFromParent()
+        }
+        return true
+        
     }
 }

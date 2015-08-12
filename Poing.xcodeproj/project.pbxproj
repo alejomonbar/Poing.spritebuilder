@@ -62,11 +62,13 @@
 		927F61B9196C771E000F43EF /* iPhone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F590E188484E7003F4D28 /* iPhone@2x.png */; };
 		927F61BA196C771E000F43EF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737896D180762440076A88C /* Default.png */; };
 		927F61BB196C771E000F43EF /* iPad-old.png in Resources */ = {isa = PBXBuildFile; fileRef = B71F5907188484E7003F4D28 /* iPad-old.png */; };
+		A90AA5211B7BBAE600329D5B /* End.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90AA5201B7BBAE600329D5B /* End.swift */; };
 		A9721B651B5D83F60002060B /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9721B641B5D83F60002060B /* Level.swift */; };
 		A97422BC1B6AA3980055EDEF /* MenuFirstTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */; };
 		A97422C01B6AA3FF0055EDEF /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422BF1B6AA3FF0055EDEF /* Menu.swift */; };
 		A97422C21B6AA99C0055EDEF /* Episodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422C11B6AA99C0055EDEF /* Episodes.swift */; };
 		A97422C41B6AB5750055EDEF /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97422C31B6AB5750055EDEF /* Levels.swift */; };
+		A985A28D1B7572AD0067E920 /* Icon.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A985A28C1B7572AD0067E920 /* Icon.xcassets */; };
 		A9886B0A1B49B2790061517C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9886B091B49B2790061517C /* Gameplay.swift */; };
 		A989BB711B56FF660023F422 /* Leftbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A989BB701B56FF660023F422 /* Leftbar.swift */; };
 		A9904DDB1B6019290008B904 /* Win.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9904DDA1B6019290008B904 /* Win.swift */; };
@@ -187,11 +189,13 @@
 		7BF6AF9F1A425F9800FFF9BA /* JavaFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaFoundation.framework; path = "../../../../../../../Library/SBAndroid/Application Support/Developer/Shared/Xcode/Platforms/Android.platform/Developer/SDKs/SBAndroid.sdk/System/Library/Frameworks/JavaFoundation.framework"; sourceTree = "<group>"; };
 		8392007918EE8E3300B6C429 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		927F61BF196C771E000F43EF /* Poing Android.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Poing Android.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A90AA5201B7BBAE600329D5B /* End.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = End.swift; sourceTree = "<group>"; };
 		A9721B641B5D83F60002060B /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuFirstTime.swift; sourceTree = "<group>"; };
 		A97422BF1B6AA3FF0055EDEF /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		A97422C11B6AA99C0055EDEF /* Episodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episodes.swift; sourceTree = "<group>"; };
 		A97422C31B6AB5750055EDEF /* Levels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
+		A985A28C1B7572AD0067E920 /* Icon.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icon.xcassets; sourceTree = "<group>"; };
 		A9886B091B49B2790061517C /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
 		A989BB701B56FF660023F422 /* Leftbar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Leftbar.swift; sourceTree = "<group>"; };
 		A9904DDA1B6019290008B904 /* Win.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Win.swift; sourceTree = "<group>"; };
@@ -465,6 +469,7 @@
 			children = (
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
+				A90AA5201B7BBAE600329D5B /* End.swift */,
 				A97422BB1B6AA3980055EDEF /* MenuFirstTime.swift */,
 				A9886B091B49B2790061517C /* Gameplay.swift */,
 				A9951A081B4F159A00A74C8F /* Circle.swift */,
@@ -562,6 +567,7 @@
 				B73789911807667A0076A88C /* Icons */,
 				B737893A180761570076A88C /* Published-iOS */,
 				B78A0B0F198AF87200C63841 /* Published-Android */,
+				A985A28C1B7572AD0067E920 /* Icon.xcassets */,
 			);
 			name = Resources;
 			path = Source/Resources;
@@ -771,6 +777,7 @@
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
+				A985A28D1B7572AD0067E920 /* Icon.xcassets in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
 				B71F5912188484E7003F4D28 /* iPad-old@2x.png in Resources */,
@@ -860,6 +867,7 @@
 				A9E10D0E1B5812A100CC1870 /* Chargenext.swift in Sources */,
 				A9951A091B4F159A00A74C8F /* Circle.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				A90AA5211B7BBAE600329D5B /* End.swift in Sources */,
 				A9C8D7721B508B95006AE6FA /* Character.swift in Sources */,
 				A97422BC1B6AA3980055EDEF /* MenuFirstTime.swift in Sources */,
 				A97422C21B6AA99C0055EDEF /* Episodes.swift in Sources */,
@@ -1154,6 +1162,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jhon Montanez (X3XYE4WCRM)";
@@ -1178,7 +1187,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Poing;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17272359-93bc-444b-9b37-78afa81bbb26";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1190,9 +1199,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jhon Montanez (X3XYE4WCRM)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Jhon Montanez (A7DDRG2VKG)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1212,7 +1222,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = Poing;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "17272359-93bc-444b-9b37-78afa81bbb26";
 				SWIFT_OBJC_BRIDGING_HEADER = "Source/Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;

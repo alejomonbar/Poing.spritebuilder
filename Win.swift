@@ -17,9 +17,8 @@ class Win: CCNode {
     weak var star2: CCNode!
     weak var star3: CCNode!
     // Show the stars if the level of energy is over that value
-    var percentTo3 = Float(20)
-    var percentTo2 = Float(10)
-    var percentTo1 = Float(5)
+    var percentTo3 = Gameplay().defaults.floatForKey("toGet3")
+    var percentTo2 = Gameplay().defaults.floatForKey("toGet2")
     
     var currentLevel = Gameplay().defaults.integerForKey("level")
     
@@ -39,7 +38,7 @@ class Win: CCNode {
         } else if currentScore >= percentTo2 {
             star1.visible = true
             star2.visible = true
-        } else if currentScore >= percentTo1 {
+        } else {
             star1.visible = true
         }
         energySaved.string = String(Int(currentScore))
@@ -48,6 +47,20 @@ class Win: CCNode {
     }
     
     func nextLevel(){
+        if currentLevel > 27 {
+            if Gameplay().defaults.boolForKey("EndFirstTime"){
+                let level = CCBReader.loadAsScene("End")
+                let transition = CCTransition(fadeWithDuration: 0.8)
+                CCDirector.sharedDirector().presentScene(level, withTransition: transition)
+            } else {
+                let level = CCBReader.loadAsScene("Episodes")
+                let transition = CCTransition(fadeWithDuration: 0.8)
+                CCDirector.sharedDirector().presentScene(level, withTransition: transition)
+            }
+
+            return
+        }
+        
         Gameplay().presentGamePlay()
     }
     

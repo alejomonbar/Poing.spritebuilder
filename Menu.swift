@@ -11,12 +11,27 @@ import Foundation
 class Menu: CCNode {
     
     func cont(){
+        animationManager.runAnimationsForSequenceNamed("pushPlay")
+        self.scheduleOnce("continued", delay: 1)
+
+
+    }
+    func mainMenu(){
+        animationManager.runAnimationsForSequenceNamed("pushMainMenu")
+        self.scheduleOnce("mainMenuCall", delay: 1)
+    }
+    
+    func butonTouched() {
+    }
+    
+    func continued() {
         Gameplay().defaults.setBool(false, forKey: "fromLevels")
         let level = CCBReader.loadAsScene("Gameplay")
         let transition = CCTransition(fadeWithDuration: 0.8)
         CCDirector.sharedDirector().presentScene(level, withTransition: transition)
     }
-    func mainMenu(){
+    
+    func mainMenuCall(){
         let level = CCBReader.loadAsScene("Episodes")
         let transition = CCTransition(fadeWithDuration: 0.8)
         CCDirector.sharedDirector().presentScene(level, withTransition: transition)

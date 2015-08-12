@@ -62,7 +62,7 @@
 			<key>collisionType</key>
 			<string>mushroom</string>
 			<key>cornerRadius</key>
-			<real>35.41015625</real>
+			<real>36</real>
 			<key>density</key>
 			<real>0.10000000149011612</real>
 			<key>dynamic</key>
@@ -70,7 +70,7 @@
 			<key>elasticity</key>
 			<real>0.0</real>
 			<key>friction</key>
-			<real>0.0099999997764825821</real>
+			<real>0.0</real>
 			<key>points</key>
 			<array>
 				<array>
