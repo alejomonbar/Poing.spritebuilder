@@ -118,6 +118,8 @@ class Gameplay: CCNode{
     weak var menuP: CCNode!
     weak var menuT: CCNode!
     
+    var time = 0
+    
     var powerRectangle: Float = 10 {
         didSet {
             powerScreenR.scaleX = powerRectangle / Float(10)
@@ -195,6 +197,8 @@ class Gameplay: CCNode{
         xTouch = touch.locationInWorld().x
         yTouch = touch.locationInWorld().y
         
+        
+        
         if xTouch < screenHalf  {
             xTouchL = touch.locationInWorld().x
             // Charge the bar when a touch in the left scree exist
@@ -214,12 +218,16 @@ class Gameplay: CCNode{
     }
     
     override func touchMoved(touch: CCTouch!, withEvent event: CCTouchEvent!) {
-        
-        println("moved")
+     
         currentPositionX = touch.locationInWorld().x
         currentPositionY = touch.locationInWorld().y
         println(currentPositionX)
         touchMovedRight = false
+        
+        hero.walking()
+        
+
+        
         if xTouchL != nil {
             
             differenceX = currentPositionX! - xTouchL!
@@ -245,7 +253,7 @@ class Gameplay: CCNode{
     
     override func touchEnded(touch: CCTouch!, withEvent event: CCTouchEvent!) {
         println("ended")
-
+        hero.hi = false
         
         if barExist && touch.locationInWorld().x <= screenHalf || touchMovedRight {
             println("removeBar")
@@ -253,6 +261,7 @@ class Gameplay: CCNode{
             barExist = false
             xTouchL = nil
             touchMovedRight = false
+            
         }
     }
     
