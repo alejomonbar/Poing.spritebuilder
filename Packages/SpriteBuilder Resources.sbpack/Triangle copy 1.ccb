@@ -10,7 +10,7 @@
 		<false/>
 	</dict>
 	<key>UUID</key>
-	<integer>2</integer>
+	<integer>1</integer>
 	<key>centeredOrigin</key>
 	<false/>
 	<key>currentResolution</key>
@@ -35,12 +35,48 @@
 	<false/>
 	<key>nodeGraph</key>
 	<dict>
+		<key>animatedProperties</key>
+		<dict>
+			<key>0</key>
+			<dict>
+				<key>color</key>
+				<dict>
+					<key>keyframes</key>
+					<array>
+						<dict>
+							<key>easing</key>
+							<dict>
+								<key>type</key>
+								<integer>1</integer>
+							</dict>
+							<key>name</key>
+							<string>color</string>
+							<key>time</key>
+							<real>0.0</real>
+							<key>type</key>
+							<integer>6</integer>
+							<key>value</key>
+							<array>
+								<real>1</real>
+								<real>1</real>
+								<real>1</real>
+								<real>1</real>
+							</array>
+						</dict>
+					</array>
+					<key>name</key>
+					<string>color</string>
+					<key>type</key>
+					<integer>6</integer>
+				</dict>
+			</dict>
+		</dict>
 		<key>baseClass</key>
 		<string>CCSprite</string>
 		<key>children</key>
 		<array/>
 		<key>customClass</key>
-		<string></string>
+		<string>Triangle</string>
 		<key>displayName</key>
 		<string>CCSprite</string>
 		<key>memberVarAssignmentName</key>
@@ -52,7 +88,7 @@
 			<key>affectedByGravity</key>
 			<true/>
 			<key>allowsRotation</key>
-			<true/>
+			<false/>
 			<key>bodyShape</key>
 			<integer>0</integer>
 			<key>collisionCategories</key>
@@ -60,13 +96,13 @@
 			<key>collisionMask</key>
 			<array/>
 			<key>collisionType</key>
-			<string></string>
+			<string>hero</string>
 			<key>cornerRadius</key>
 			<real>0.0</real>
 			<key>density</key>
 			<real>1</real>
 			<key>dynamic</key>
-			<false/>
+			<true/>
 			<key>elasticity</key>
 			<real>0.30000001192092896</real>
 			<key>friction</key>
@@ -78,32 +114,24 @@
 					<real>0.0</real>
 				</array>
 				<array>
-					<real>0.0</real>
-					<real>128</real>
+					<real>22.329032897949219</real>
+					<real>34.064113616943359</real>
 				</array>
 				<array>
-					<real>90</real>
-					<real>128</real>
-				</array>
-				<array>
-					<real>90</real>
-					<real>0.0</real>
+					<real>37.752204895019531</real>
+					<real>0.49345928430557251</real>
 				</array>
 			</array>
 			<key>polygons</key>
 			<array>
 				<array>
 					<array>
-						<real>90</real>
-						<real>0.0</real>
+						<real>37.752204895019531</real>
+						<real>0.49345928430557251</real>
 					</array>
 					<array>
-						<real>90</real>
-						<real>128</real>
-					</array>
-					<array>
-						<real>0.0</real>
-						<real>128</real>
+						<real>22.329032897949219</real>
+						<real>34.064113616943359</real>
 					</array>
 					<array>
 						<real>0.0</real>
@@ -143,8 +171,8 @@
 				<string>Point</string>
 				<key>value</key>
 				<array>
-					<real>0.5</real>
-					<real>0.5</real>
+					<real>0.0</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>
@@ -168,7 +196,7 @@
 				<key>value</key>
 				<array>
 					<string></string>
-					<string>Forest/Trunk@4x.png</string>
+					<string>Assest/IT-5@4x.png</string>
 				</array>
 			</dict>
 			<dict>
@@ -183,6 +211,13 @@
 				</array>
 			</dict>
 			<dict>
+				<key>baseValue</key>
+				<array>
+					<real>1</real>
+					<real>1</real>
+					<real>1</real>
+					<real>1</real>
+				</array>
 				<key>name</key>
 				<string>color</string>
 				<key>type</key>
@@ -205,6 +240,8 @@
 			</dict>
 		</array>
 		<key>selected</key>
+		<true/>
+		<key>seqExpanded</key>
 		<true/>
 	</dict>
 	<key>notes</key>

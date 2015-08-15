@@ -738,8 +738,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.21112041175365448</real>
+							<real>0.1854654997587204</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -752,7 +752,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-2@4x.png</string>
+							<string>Character/Personaje-21.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -846,8 +846,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.20526511967182159</real>
+							<real>0.18695321679115295</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -860,7 +860,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-5@4x.png</string>
+							<string>Character/Personaje-22.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -954,8 +954,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.15684774518013</real>
+							<real>0.15418502688407898</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -968,7 +968,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-7@4x.png</string>
+							<string>Character/Personaje-18.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1004,6 +1004,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 		</array>
 		<key>customClass</key>

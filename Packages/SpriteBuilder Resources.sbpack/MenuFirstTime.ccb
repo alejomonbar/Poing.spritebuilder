@@ -370,8 +370,6 @@
 						<array/>
 					</dict>
 				</array>
-				<key>selected</key>
-				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -1090,8 +1088,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.15699861943721771</real>
+							<real>0.14100947976112366</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1104,7 +1102,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-5@4x.png</string>
+							<string>Character/Personaje-22.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1140,6 +1138,8 @@
 						<array/>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 				<key>seqExpanded</key>
 				<true/>
 			</dict>
@@ -1367,8 +1367,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.14488518238067627</real>
+							<real>0.15918998420238495</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1381,7 +1381,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-7@4x.png</string>
+							<string>Character/Personaje-18.png</string>
 						</array>
 					</dict>
 					<dict>
@@ -1552,8 +1552,8 @@
 						<string>ScaleLock</string>
 						<key>value</key>
 						<array>
-							<real>1</real>
-							<real>1</real>
+							<real>0.17954754829406738</real>
+							<real>0.17187941074371338</real>
 							<false/>
 							<integer>0</integer>
 						</array>
@@ -1566,7 +1566,7 @@
 						<key>value</key>
 						<array>
 							<string></string>
-							<string>Assest/IT-2@4x.png</string>
+							<string>Character/Personaje-21.png</string>
 						</array>
 					</dict>
 					<dict>

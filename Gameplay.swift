@@ -229,7 +229,6 @@ class Gameplay: CCNode{
 
         
         if xTouchL != nil {
-            
             differenceX = currentPositionX! - xTouchL!
             
 //            if currentPositionX < screenHalf {
@@ -271,6 +270,7 @@ class Gameplay: CCNode{
             if powerCircle > 0 {
                 hero.physicsBody.eachCollisionPair { (pair) -> Void in
                     if !self.hero.jumped {
+                        self.hero.jumping()
                         self.energyC++
                         self.hero.physicsBody.applyImpulse(CGPoint(x: 0, y: 180))
                         self.hero.jumped = true
@@ -282,6 +282,7 @@ class Gameplay: CCNode{
         }
             
         if heroType == .Triangle {
+            self.hero.jumping()
             if powerTriangle > 0 {
                 reducePowerT(powerT)
                 hero.physicsBody.velocity.y = CGFloat(100)
@@ -289,6 +290,7 @@ class Gameplay: CCNode{
             }
         }
         if heroType == .Rectangle {
+            self.hero.jumping()
             if powerRectangle > 0 {
                 reducePowerR(powerR)
                 hero.physicsBody.velocity.y = CGFloat(0)
@@ -363,11 +365,15 @@ class Gameplay: CCNode{
     }
     
     func moveCharacter(velocity: CGFloat){
-        
+        var sign = differenceX / abs(differenceX)
+        if sign < 0 {
+            hero.flipL()
+        } else {
+            hero.flipR()
+        }
         if abs(differenceX) < hero.maxSpeed {
             hero.physicsBody.velocity.x = 1.2 * velocity
         } else {
-            var sign = differenceX / abs(differenceX)
             hero.physicsBody.velocity.x = 1.2 * sign * hero.maxSpeed
         }
 

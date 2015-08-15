@@ -2008,7 +2008,7 @@
 						<key>value</key>
 						<array>
 							<real>646.1541748046875</real>
-							<real>783.31915283203125</real>
+							<real>801.31915283203125</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2724,8 +2724,8 @@
 						<string>Position</string>
 						<key>value</key>
 						<array>
-							<real>780.75408935546875</real>
-							<real>792.81915283203125</real>
+							<real>775.75408935546875</real>
+							<real>799.81915283203125</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -2761,6 +2761,8 @@
 						<string>Forest/Physics forest/spikes.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>

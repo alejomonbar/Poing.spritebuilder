@@ -750,7 +750,7 @@
 						<key>value</key>
 						<array>
 							<real>520.64739990234375</real>
-							<real>691.51983642578125</real>
+							<real>673.51983642578125</real>
 							<integer>0</integer>
 							<integer>0</integer>
 							<integer>0</integer>
@@ -778,6 +778,8 @@
 						<string>Forest/Physics forest/spikes.ccb</string>
 					</dict>
 				</array>
+				<key>selected</key>
+				<true/>
 			</dict>
 			<dict>
 				<key>UUID</key>
@@ -4165,8 +4167,6 @@
 				</array>
 			</dict>
 		</array>
-		<key>selected</key>
-		<true/>
 	</dict>
 	<key>notes</key>
 	<array/>
